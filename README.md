@@ -1,5 +1,17 @@
 # 🌱 Hello, I'm Erica Thompson!
 
+<picture>
+<source 
+  srcset="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true&theme=dark&bg_color=00000000&hide_border=true&icon_color=4E9658&title_color=4E9658&text_color=ffffff"
+  media="(prefers-color-scheme: dark)"
+/>
+<source
+  srcset="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true&theme=default&bg_color=ffffff&hide_border=true&icon_color=4E9658&title_color=4E9658"
+  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+/>
+<img src="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true" />
+</picture>
+
 <div align="center">
   
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Pixelify+Sans&size=24&duration=3000&pause=1000&color=4E9658&center=true&vCenter=true&random=false&width=500&lines=Building+Digital+Gardens;Cultivating+Code;Growing+Future+Developers;Engineering+Scalable+Solutions;Planting+Seeds+of+Knowledge)](https://git.io/typing-svg)
@@ -14,6 +26,12 @@ Just as Stardew Valley is about growth and building something meaningful, my tec
 - 🏗️ Building robust cloud infrastructure (AWS, Kubernetes, Terraform)
 - 🎯 Crafting accessible and efficient B2B solutions
 - 📚 Pursuing BS in Computer Science while tending to 11+ years of industry experience
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/react-%23ffffff.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/react-%23092140.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+  <img alt="React Badge" src="https://img.shields.io/badge/react-%23092140.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+</picture>
 
 ## 🛠️ Tech Tool Shed
 
@@ -51,13 +69,24 @@ Just as Stardew Valley is about growth and building something meaningful, my tec
 
 ## 📊 Stats Garden
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=Younique98&theme=gotham&hide_border=true&border_radius=10&background=0D1117&stroke=4E9658&fire=764462&sideLabels=4E9658&currStreakLabel=4E9658&dates=764462" alt="GitHub Streak" />
-</div>
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Younique98&theme=nord&no-frame=true&row=1&column=3&title_color=4E9658&icon_color=764462" alt="GitHub Trophies" />
+
+<!-- Dark Mode -->
+<picture>
+  <source 
+    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=dark&hide_border=true&background=0D1117&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462"
+    media="(prefers-color-scheme: dark)"
+  />
+  <!-- Light Mode -->
+  <source
+    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=light&hide_border=true&background=ffffff&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="https://streak-stats.demolab.com/?user=Younique98" />
+</picture>
+
 </div>
 
-## 🤝 Connect With Me
+## 🫱🏾‍🫲🏽 Connect With Me
 <div align="center">
   
 [![LinkedIn](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
