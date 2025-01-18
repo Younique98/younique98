@@ -92,12 +92,12 @@ const ericaStatus = {
 <table>
   <tr>
     <td align="center" width="50%">
-      <a href="https://github.com/Younique98/milspouse-elevate">
+      <a href="https://github.com/Younique98/milspouse-elevate" target="_blank">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=milspouse-elevate&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
     </a>
       </td>
     <td align="center" width="50%">
-       <a href="https://github.com/Younique98/military_base_rideshare">
+       <a href="https://github.com/Younique98/military_base_rideshare" target="_blank">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=military_base_rideshare&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
       </a>
        </td>
