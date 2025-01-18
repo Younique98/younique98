@@ -94,7 +94,7 @@ const ericaStatus = {
     <td align="center" width="50%">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=milspouse-elevate&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
     </td>
-    <td align="center" width="50%">
+        <td align="center" width="50%">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=military_base_rideshare&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
     </td>
   </tr>
