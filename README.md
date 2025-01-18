@@ -90,7 +90,7 @@ Just as Stardew Valley is about growth and building something meaningful, my tec
 <div align="center">
   
 [![LinkedIn](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
-[![Portfolio](https://img.shields.io/badge/Portfolio-%234E9658.svg?style=for-the-badge&logo=firefox&logoColor=white)](YOUR_PORTFOLIO_URL)
+[![Portfolio](https://img.shields.io/badge/Portfolio-%234E9658.svg?style=for-the-badge&logo=firefox&logoColor=white)](https://linktr.ee/ericathompsonsmiles)
 [![Email](https://img.shields.io/badge/Email-%23764462.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ericathompsonsmiles@gmail.com)
 
 </div>
