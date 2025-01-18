@@ -1,57 +1,74 @@
-# 🌱 Hello, I'm Erica Thompson!
-
-<picture>
-<source 
-  srcset="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true&theme=dark&bg_color=00000000&hide_border=true&icon_color=4E9658&title_color=4E9658&text_color=ffffff"
-  media="(prefers-color-scheme: dark)"
-/>
-<source
-  srcset="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true&theme=default&bg_color=ffffff&hide_border=true&icon_color=4E9658&title_color=4E9658"
-  media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-/>
-<img src="https://github-readme-stats.vercel.app/api?username=Younique98&show_icons=true" />
-</picture>
+# Welcome to Erica's Digital Farm 🌱
 
 <div align="center">
   
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Pixelify+Sans&size=24&duration=3000&pause=1000&color=4E9658&center=true&vCenter=true&random=false&width=500&lines=Building+Digital+Gardens;Cultivating+Code;Growing+Future+Developers;Engineering+Scalable+Solutions;Planting+Seeds+of+Knowledge)](https://git.io/typing-svg)
+```ascii
++------------------[ Erica Thompson's Tech Garden ]-------------------+
+|                                                                    |
+|     🌱 ~/code $ grow fullstack-engineer                           |
+|     🚀 Cultivating scalable solutions                             |
+|     🎓 Nurturing new developers                                   |
+|     ⚡ Harvesting innovative tech                                 |
+|                                                                    |
++--------------------------------------------------------------------+
+```
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Pixelify+Sans&size=24&duration=3000&pause=1000&color=4E9658&center=true&vCenter=true&random=false&width=500&lines=Full+Stack+Engineer;Tech+Mentor;Code+Cultivator;Infrastructure+Architect;Digital+Garden+Keeper)](https://git.io/typing-svg)
 
 </div>
 
-## 🌟 About Me
-Just as Stardew Valley is about growth and building something meaningful, my tech journey has been about cultivating solutions and helping others grow:
+## 🌟 Season Summary
+From tending to family computers to architecting cloud solutions, my tech journey spans **11+ seasons** of growth and innovation. Currently:
 
-- 🚀 Architecting scalable applications at Wagmo with React, Node.js, and Flutter
-- 🌱 Nurturing the next generation of developers at Nashville Software School
-- 🏗️ Building robust cloud infrastructure (AWS, Kubernetes, Terraform)
-- 🎯 Crafting accessible and efficient B2B solutions
-- 📚 Pursuing BS in Computer Science while tending to 11+ years of industry experience
+```js
+const ericaStatus = {
+    role: "Software Engineer @ Wagmo",
+    teaching: "Nashville Software School",
+    studying: "BS Computer Science @ WGU",
+    levelUp: ["AWS", "React", "Flutter"],
+    questProgress: "B2C to B2B Transformation ▓▓▓▓▓▓▓▓▓░ 90%"
+};
+```
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/react-%23ffffff.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/react-%23092140.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
-  <img alt="React Badge" src="https://img.shields.io/badge/react-%23092140.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
-</picture>
-
-## 🛠️ Tech Tool Shed
+## 🎭 Character Stats
 
 <div align="center">
 
-### Frontend Farming
+<!-- Dark Mode -->
+<picture>
+  <source 
+    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=dark&hide_border=true&background=0D1117&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462&count_private=true&include_all_commits=true"
+    media="(prefers-color-scheme: dark)"
+  />
+  <!-- Light Mode -->
+  <source
+    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=light&hide_border=true&background=ffffff&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462&count_private=true&include_all_commits=true"
+    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+  />
+  <img src="https://streak-stats.demolab.com/?user=Younique98&count_private=true&include_all_commits=true" />
+</picture>
+
+</div>
+
+## 🌾 Tech Crops
+
+<div align="center">
+
+### Front-End Fields
 ![React](https://img.shields.io/badge/react-%23092140.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Next.js](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%234E9658.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-%23764462.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%234E9658.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### Backend Crafting
+### Backend Barn
 ![Python](https://img.shields.io/badge/python-%23764462.svg?style=for-the-badge&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/django-%234E9658.svg?style=for-the-badge&logo=django&logoColor=white)
 ![Go](https://img.shields.io/badge/go-%23092140.svg?style=for-the-badge&logo=go&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-%23764462.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%234E9658.svg?style=for-the-badge&logo=terraform&logoColor=white)
 
-### Development Tools
+### Tool Shed
 ![Docker](https://img.shields.io/badge/docker-%23092140.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%234E9658.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23764462?style=for-the-badge&logo=jest&logoColor=white)
@@ -61,32 +78,43 @@ Just as Stardew Valley is about growth and building something meaningful, my tec
 </div>
 
 ## 🏆 Achievement Collection
-- 🌟 Salesforce Certified Platform Developer & Administrator
-- 🎯 CompTIA Project+
-- ⭐ Fonteva Platform Expert (Power User, Database Specialist, Events)
-- 💎 Increased client value by 35% through technical solutions
-- 🚀 Successfully led B2C to B2B transformation
 
-## 📊 Stats Garden
-<div align="center">
+```ascii
+⭐ Salesforce Certified Platform Developer & Administrator
+🌟 CompTIA Project+
+🎯 Fonteva Platform Expert (Power User, Database Specialist, Events)
+💎 35% Client Value Growth Achievement
+🚀 B2C to B2B Transformation Master
+```
 
-<!-- Dark Mode -->
-<picture>
-  <source 
-    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=dark&hide_border=true&background=0D1117&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462"
-    media="(prefers-color-scheme: dark)"
-  />
-  <!-- Light Mode -->
-  <source
-    srcset="https://streak-stats.demolab.com/?user=Younique98&theme=light&hide_border=true&background=ffffff&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462"
-    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-  />
-  <img src="https://streak-stats.demolab.com/?user=Younique98" />
-</picture>
+## 🌱 Currently Growing
 
-</div>
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=milspouse-elevate&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=Younique98&repo=military_base_rideshare&theme=dark&bg_color=0D1117&border_color=4E9658&title_color=4E9658&text_color=ffffff&icon_color=4E9658" />
+    </td>
+  </tr>
+</table>
 
-## 🫱🏾‍🫲🏽 Connect With Me
+## 🗺️ Quest Log (Professional Journey)
+
+```ascii
+[2022-Present] Software Engineer @ Wagmo
+├── Led B2C to B2B transformation quest
+├── Mastered React, Node.js, Flutter spells
+└── Architected scalable cloud solutions
+
+[2023-Present] Senior Guide @ Nashville Software School
+├── Training next generation of code farmers
+├── Crafting comprehensive learning paths
+└── Sharing battle-tested development wisdom
+```
+
+## 🫱🏾‍🫲🏽 Join My Party
 <div align="center">
   
 [![LinkedIn](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
@@ -97,5 +125,5 @@ Just as Stardew Valley is about growth and building something meaningful, my tec
 
 ---
 <div align="center">
-<sub>Built with 💚 and a sprinkle of Stardew Valley inspiration</sub>
+<sub>💚 Built with love in my digital Stardew Valley 💚</sub>
 </div>
