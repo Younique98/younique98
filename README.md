@@ -1,23 +1,34 @@
-## Hi. I'm Erica Thompson.
+## Erica Thompson
 
-Fractional CTO. Technical audits. Advisory. Team leadership.
+**Fractional CTO.** Technical audits. Advisory. Team leadership.
 
-I audit codebases, find what's broken, fix it, and hand teams back clean systems with documentation they can maintain without me.
+I find what's broken in your codebase, fix it, and hand you back a clean system. You won't need me anymore — that's the point.
 
-**The track record:**
-- 12+ years across frontend, backend, and infrastructure
-- $1.2M in B2B revenue delivered. $12.5M protected through compliance.
-- $500K+ legal exposure eliminated via 95% WCAG 2.1 accessibility compliance.
-- 60% error reduction on a documentation platform serving 100K+ users.
-- 500+ engineers trained and placed, 80%+ placement rate.
+---
 
-**Engagements:** Technical audits. Fractional CTO advisory. Team training and workshops. Tuesday through Thursday. Async-first. Remote worldwide.
+### The work
+- **Technical audits** — I identify the $2M problem that's capping your growth. Then I tell you how to fix it.
+- **Fractional CTO** — 90 minutes per week. Strategic technical decisions. You execute.
+- **Team leadership** — I show your engineers how to think like architects, not just coders.
 
-**Stack:** React, Next.js, TypeScript, React Native, Flutter, Node, Django, Go, AWS, Kubernetes, Terraform, PostgreSQL.
+### The track record
+**12+ years** across frontend, backend, infrastructure, and team building.
 
-📺 I teach at [@TheImposterEngineer](https://www.youtube.com/@TheImposterEngineer) — self-taught engineers don't need permission. They need judgment, systems, and proof.
+$1.2M in B2B revenue delivered. $12.5M in compliance exposure prevented. $500K+ legal risk eliminated through accessibility alone. 60% error reduction on production systems serving 100K+ users.
 
-**Get in touch:**
-- 🌐 [ericathompson.io](https://ericathompson.io)
-- 💼 [LinkedIn](https://linkedin.com/in/ericathompsonsmiles)
-- 📧 [ericathompsonsmiles@gmail.com](mailto:ericathompsonsmiles@gmail.com)
+500+ engineers trained. 80%+ placement rate.
+
+### The stack
+React. Next.js. TypeScript. Flutter. Node. Django. Go. AWS. Kubernetes. Terraform. PostgreSQL.
+
+And the skills that matter more: how to read a system. How to see second-order effects. How to make decisions with 70% confidence instead of waiting for certainty.
+
+---
+
+### What I do publicly
+📺 [@TheImposterEngineer](https://www.youtube.com/@TheImposterEngineer) — Teaching self-taught engineers that they don't need permission. They need judgment, systems, and proof.
+
+### How to reach me
+**[ericathompson.io](https://ericathompson.io)** — Work inquiry  
+**[LinkedIn](https://linkedin.com/in/ericathompsonsmiles)** — Professional context  
+**ericathompsonsmiles@gmail.com** — Direct
