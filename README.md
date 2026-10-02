@@ -37,7 +37,7 @@ Most engineering problems presented to me are symptoms. 400 daily errors are usu
 
 * 💰 **$1.2M Generated.** Rebuilt a B2B onboarding flow that directly drove $1.2M in annual revenue. *(Wagmo)*
 * 🛡️ **$12.5M Protected.** Shipped critical regulatory compliance 10 days early, with zero disruption to 20K+ live policies. *(Wagmo)*
-* ⚖️ **$500K+ Legal Exposure Cleared.** Remediated 200+ accessibility violations to 95% compliance under active lawsuit threat, passing Series A diligence. *(Wagmo)*
+* ⚖️ **$50K+ Legal Exposure Cleared.** Remediated 200+ accessibility violations to 95% compliance under an active accessibility lawsuit, ahead of investor due diligence. *(Wagmo)*
 * 🔍 **60% Error Reduction.** Traced 400+ daily routing failures to 3 systemic root causes on a platform serving 100K+ users. *(HashiCorp)*
 * ⏱️ **70% Faster Incident Response.** Architected observability that dropped incident response from 2+ hours to 36 minutes. *(Skillz)*
 * 🤝 **180+ Inbound Founder Requests.** Portfolio companies have gone on to raise, pivot, and be acquired. *(Independent advisory)*
