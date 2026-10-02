@@ -39,8 +39,23 @@ Most engineering problems presented to me are symptoms. 400 daily errors are usu
 * 🛡️ **$12.5M Protected.** Shipped critical regulatory compliance 10 days early, with zero disruption to 20K+ live policies. *(Wagmo)*
 * ⚖️ **$500K+ Legal Exposure Cleared.** Remediated 200+ accessibility violations to 95% compliance under active lawsuit threat, passing Series A diligence. *(Wagmo)*
 * 🔍 **60% Error Reduction.** Traced 400+ daily routing failures to 3 systemic root causes on a platform serving 100K+ users. *(HashiCorp)*
-* ⏱️ **40% Faster Incident Response.** Architected observability that dropped incident response from 2+ hours to 36 minutes. *(Skillz)*
+* ⏱️ **70% Faster Incident Response.** Architected observability that dropped incident response from 2+ hours to 36 minutes. *(Skillz)*
 * 🤝 **180+ Inbound Founder Requests.** Portfolio companies have gone on to raise, pivot, and be acquired. *(Independent advisory)*
+
+## 🏛️ How I Lead
+
+Companies compound through people. Engineers who are trusted, taught, and held to a clear standard become engineers who can take on any problem, including ones they have never seen. **Grow the person. Grow the team. Grow the company.**
+
+* **Failures belong to the system.** Blameless reviews, real accountability: we own the fix, the follow-through, and the lesson. High standards, high support.
+* **Clarity is a leadership duty.** Every engineer should know what matters most, why, and who decides.
+* **Standards are enforced by systems, not memory.** Security, accessibility, and quality are checked on every change, so people spend their judgment on the hard problems.
+* **AI is accountable like any other system.** AI amplifies whatever foundation it lands on. Every AI feature has an owner, measured quality, and rules it cannot break.
+
+These rest on research, not opinion: psychological safety was the most important factor in Google's most effective teams (Project Aristotle), and DORA's research links trusting, learning cultures to both delivery and business performance.
+
+<div align="center">
+<a href="https://github.com/Younique98/engineering-standards"><b>📐 Read the full philosophy and the standards every project I lead starts from</b></a>
+</div>
 
 ## 🤝 Engagements
 
@@ -87,7 +102,7 @@ I put my methods on the record: how to read an unfamiliar codebase, how to debug
   </a>
 </div>
 
-## 🗺️ 12 Years in Production
+## 🗺️ 13 Years in Production
 
 * **Fractional CTO & Startup Specialist (2022 to Present).** Technical counsel to CEOs and COOs. Technical due diligence, architecture review, interview boards, and team building. 180+ inbound founder requests.
 * **Software Engineer, HashiCorp [IBM] (2025 to 2026).** Owned diagnosis at 100K+ scale. Unified fractured UI patterns across teams and served as Vault Release Captain.
@@ -155,7 +170,7 @@ I put my methods on the record: how to read an unfamiliar codebase, how to debug
 
 [![Portfolio](https://img.shields.io/badge/ericathompson.io-%234E9658.svg?style=for-the-badge&logo=firefox&logoColor=white)](https://ericathompson.io)
 [![LinkedIn](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
-[![Email](https://img.shields.io/badge/Book_an_Audit-%23764462.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ericathompsonsmiles@gmail.com)
+[![Email](https://img.shields.io/badge/Book_an_Audit-%23764462.svg?style=for-the-badge)](mailto:hr@bravehaven.io)
 
 </div>
 
