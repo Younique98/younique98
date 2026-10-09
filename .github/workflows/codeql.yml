@@ -1,0 +1,69 @@
+name: Static analysis
+
+# STANDARDS.md, Supply chain: static analysis runs in CI alongside lint and
+# typecheck. CodeQL finds injection, unsafe deserialization, path traversal
+# and similar flaws that tests rarely exercise.
+#
+# CodeQL is free for public repositories. Private repositories need GitHub
+# Code Security: when it is enabled, set the repository variable
+# CODEQL_ENABLED to "true" (Settings, Secrets and variables, Actions,
+# Variables) and CodeQL runs. Otherwise a private repository runs Semgrep's
+# open-source rules instead. Exactly one of the two runs, so every repository
+# is scanned.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    # A static name: a job that is skipped shows its name unexpanded.
+    name: CodeQL
+    if: ${{ !github.event.repository.private || vars.CODEQL_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        # This repository holds a profile README and its workflows, so the
+        # workflows are the only code CodeQL can analyze.
+        language: [actions]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: github/codeql-action/init@1190a975f95ce23525efb6a3fc21ea29567c1b52 # v3.38.2
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-extended
+      - uses: github/codeql-action/analyze@1190a975f95ce23525efb6a3fc21ea29567c1b52 # v3.38.2
+        with:
+          category: /language:${{ matrix.language }}
+
+  semgrep:
+    name: Semgrep
+    if: ${{ github.event.repository.private && vars.CODEQL_ENABLED != 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Install Semgrep
+        run: pip install "semgrep==1.179.0"
+      - name: Scan
+        # The default security rule set, failing the job on any finding.
+        # Metrics are off: no code or usage data leaves the runner.
+        run: semgrep scan --config p/default --error --metrics=off

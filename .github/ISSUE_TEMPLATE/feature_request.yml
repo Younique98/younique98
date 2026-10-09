@@ -1,0 +1,35 @@
+name: Feature request
+description: Propose a change or a new capability
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: Who has it, what it costs them today, and how often.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: The outcome
+      description: What success looks like, ideally as something measurable.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+      description: Optional. Alternatives considered and their tradeoffs.
+  - type: checkboxes
+    id: ai
+    attributes:
+      label: AI
+      options:
+        - label: This involves an AI model. It will start from docs/ai/SPEC_TEMPLATE.md and get evals before launch.
+  - type: textarea
+    id: done
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...

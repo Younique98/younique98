@@ -98,7 +98,7 @@ I put my methods on the record: how to read an unfamiliar codebase, how to debug
 
 <div align="center">
   <a href="https://www.youtube.com/@TheImposterEngineer">
-    <img src="https://img.shields.io/badge/Watch_how_I_think-%23764462.svg?style=for-the-badge&logo=youtube&logoColor=white" />
+    <img src="https://img.shields.io/badge/Watch_how_I_think-%23764462.svg?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch how I think on The Imposter Engineer YouTube channel" />
   </a>
 </div>
 
@@ -162,7 +162,7 @@ I put my methods on the record: how to read an unfamiliar codebase, how to debug
     srcset="https://streak-stats.demolab.com/?user=Younique98&theme=light&hide_border=true&background=ffffff&stroke=4E9658&fire=764462&currStreakLabel=4E9658&sideLabels=4E9658&dates=764462&count_private=true&include_all_commits=true"
     media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
   />
-  <img src="https://streak-stats.demolab.com/?user=Younique98&count_private=true&include_all_commits=true" />
+  <img src="https://streak-stats.demolab.com/?user=Younique98&count_private=true&include_all_commits=true" alt="GitHub contribution streak for Younique98" />
 </picture>
 </div>
 

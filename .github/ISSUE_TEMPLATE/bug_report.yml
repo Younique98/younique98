@@ -1,0 +1,42 @@
+name: Bug report
+description: Something is broken or behaves differently than documented
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: URL, page, or environment (production, preview, local).
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots, logs, or trace IDs
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Blocks users from a core task
+        - Degrades a core task
+        - Cosmetic or minor
+        - Accessibility barrier
+        - Security or privacy concern (report privately instead, see SECURITY.md)
+    validations:
+      required: true

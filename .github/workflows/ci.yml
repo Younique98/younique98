@@ -1,0 +1,144 @@
+name: CI
+
+# Every repository created from this template runs this.
+#
+# Why it exists: a commit that is never built can break production and go
+# unnoticed for days. Building every change catches it the same afternoon.
+#
+# Steps that need a package.json skip themselves until the project has one,
+# so a fresh repository from this template starts green.
+#
+# If a step fails for a missing environment variable rather than a real
+# defect, add it as a repository secret and reference it here. Do not remove
+# the step.
+
+on:
+  push:
+    branches: [main]
+  # Deliberately unfiltered. A filter of `branches: [main]` here means a pull
+  # request whose base is another branch runs no checks at all, which is
+  # exactly when a stacked change is hardest to verify by eye.
+  pull_request:
+
+# Least privilege (STANDARDS.md, Supply chain): every job only reads the
+# repository unless it declares more.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Standards, lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Check project standards
+        # Milliseconds, no dependencies. Runs first so a personal address or a
+        # duplicate route tree fails in seconds, not minutes.
+        run: node scripts/check-standards.mjs
+
+      - name: Cache Next.js build
+        # Restored before installing dependencies, so the source hash in the
+        # key covers the repository and not every file in node_modules.
+        if: hashFiles('package-lock.json') != ''
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - name: Install dependencies
+        if: hashFiles('package-lock.json') != ''
+        run: npm ci
+
+      - name: Lint
+        if: hashFiles('package-lock.json') != ''
+        run: npm run lint --if-present
+
+      - name: Typecheck
+        if: hashFiles('tsconfig.json') != '' && hashFiles('package-lock.json') != ''
+        run: npx tsc --noEmit
+
+      - name: Install Playwright browsers
+        if: hashFiles('playwright.config.ts') != ''
+        run: npx playwright install --with-deps chromium
+
+      - name: Test
+        if: hashFiles('package-lock.json') != ''
+        run: npm test --if-present
+
+      - name: Build
+        if: hashFiles('package-lock.json') != ''
+        run: npm run build --if-present
+
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+      # Standards, section 1: zero known vulnerabilities. Production
+      # dependencies block the merge at --audit-level=low (not high, which
+      # lets moderate advisories through indefinitely).
+      - name: Production dependencies (blocking)
+        if: hashFiles('package-lock.json') != ''
+        run: npm audit --omit=dev --audit-level=low
+      # Dev dependencies are reported, not blocking. Still fix them.
+      - name: Dev dependencies (report)
+        if: hashFiles('package-lock.json') != ''
+        run: npm audit --audit-level=low || echo "::warning::Dev dependency advisories found. See the log above."
+
+  templates:
+    name: Template tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        if: hashFiles('templates/**/*.test.ts') != ''
+        with:
+          node-version-file: .nvmrc
+      # Code that projects copy from templates/ is tested here, with Node's
+      # built-in runner and no dependencies, so a broken template never
+      # reaches a project. Skips in projects, which have no templates/.
+      - name: Test the templates
+        if: hashFiles('templates/**/*.test.ts') != ''
+        run: node --test 'templates/**/*.test.ts'
+      # Projects copy these files verbatim, so they must compile under the
+      # strictest settings any project uses (noUncheckedIndexedAccess,
+      # exactOptionalPropertyTypes). Installs only the compiler and Node types.
+      - name: Typecheck the templates (strictest settings)
+        if: hashFiles('templates/resilience/*.ts') != ''
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts typescript@5 @types/node@22
+          # instrumentation.ts imports @sentry/nextjs, which is not installed
+          # here; projects typecheck it against the real package.
+          npx tsc --noEmit --strict --noUncheckedIndexedAccess --exactOptionalPropertyTypes --target es2022 --lib es2022,dom --module nodenext --moduleResolution nodenext --allowImportingTsExtensions --types node templates/resilience/*.ts templates/monitoring/sentry-scrub*.ts
+
+  ai-kit:
+    name: AI eval harness tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        if: hashFiles('evals/tests/*.py') != ''
+        with:
+          python-version: "3.12"
+      - name: Test the eval runner
+        if: hashFiles('evals/tests/*.py') != ''
+        run: |
+          pip install pytest
+          python -m pytest evals/tests -q
