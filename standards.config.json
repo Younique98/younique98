@@ -1,0 +1,10 @@
+{
+  "$comment": "Organization details read by scripts/check-standards.mjs. Copied from the engineering-standards template.",
+  "template": false,
+  "templateRepositoryName": "engineering-standards",
+  "contactEmail": "hr@bravehaven.io",
+  "githubOwner": "Younique98",
+  "publicRepos": [
+    "engineering-standards"
+  ]
+}
