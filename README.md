@@ -14,7 +14,10 @@
 <h1>Erica Thompson | Fractional CTO & Technical Strategist</h1>
 <p><b>Clearing technical debt, scaling infrastructure, and passing due diligence.</b></p>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Pixelify+Sans&size=22&duration=3000&pause=1000&color=4E9658&center=true&vCenter=true&random=false&width=560&lines=Fractional+CTO+%26+Technical+Strategist;Technical+Audits+That+Find+Root+Causes;Infrastructure+That+Outlives+Me;Advising+Founders+Since+2022;The+Imposter+Engineer)](https://git.io/typing-svg)
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/headline-static.svg" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Pixelify+Sans&size=22&duration=3000&pause=1000&color=4E9658&center=true&vCenter=true&random=false&width=560&lines=Fractional+CTO+%26+Technical+Strategist;Technical+Audits+That+Find+Root+Causes;Infrastructure+That+Outlives+Me;Advising+Founders+Since+2022;The+Imposter+Engineer" alt="Fractional CTO and Technical Strategist. Technical audits that find root causes. Infrastructure that outlives me. Advising founders since 2022. The Imposter Engineer." />
+</picture>
 
 </div>
 
@@ -168,9 +171,9 @@ I put my methods on the record: how to read an unfamiliar codebase, how to debug
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/ericathompson.io-%234E9658.svg?style=for-the-badge&logo=firefox&logoColor=white)](https://ericathompson.io)
-[![LinkedIn](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
-[![Email](https://img.shields.io/badge/Book_an_Audit-%23764462.svg?style=for-the-badge)](mailto:hr@bravehaven.io)
+[![Portfolio: ericathompson.io](https://img.shields.io/badge/ericathompson.io-%234E9658.svg?style=for-the-badge&logo=firefox&logoColor=white)](https://ericathompson.io)
+[![LinkedIn profile](https://img.shields.io/badge/linkedin-%23092140.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ericathompsonsmiles)
+[![Book an Audit by email](https://img.shields.io/badge/Book_an_Audit-%23764462.svg?style=for-the-badge)](mailto:hr@bravehaven.io)
 
 </div>
 

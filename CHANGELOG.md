@@ -5,6 +5,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 ## [Unreleased]
 
 ### Fixed
+- The animated headline has alt text that reads its five lines, instead of "Typing SVG", and no longer links to the tool that generates it, a link with no meaning for a visitor (WCAG 1.1.1, 2.4.4)
+- Visitors whose system asks for reduced motion see a still headline instead of the typing animation (`assets/headline-static.svg`), as the design standards require a non-motion alternative for every animation
+- The contact badges are announced by the words they show: "Portfolio: ericathompson.io", "LinkedIn profile" and "Book an Audit by email", instead of "Portfolio" and "Email" (WCAG 2.5.3, label in name)
 - The "How I Lead" link pointed at the `engineering-standards` repository, which is private, so every visitor who followed it reached a 404 page. It now opens the leadership principles on ericathompson.io/about, and `standards.config.json` no longer lists `engineering-standards` as public, so the standards check fails if a link to it comes back while it is private
 
 ### Added (engineering standards)
