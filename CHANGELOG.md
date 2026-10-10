@@ -4,6 +4,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 
 ## [Unreleased]
 
+### Fixed
+- The "How I Lead" link pointed at the `engineering-standards` repository, which is private, so every visitor who followed it reached a 404 page. It now opens the leadership principles on ericathompson.io/about, and `standards.config.json` no longer lists `engineering-standards` as public, so the standards check fails if a link to it comes back while it is private
+
 ### Added (engineering standards)
 - The repository follows the engineering standards: `standards.config.json` and `scripts/check-standards.mjs` fail CI on a personal email address or a link to a private repository in the README, which is the page every visitor to the profile reads first
 - CI runs the standards check on every pull request, a secret scan runs on every push and weekly across the full history, and CodeQL analyzes the workflows
