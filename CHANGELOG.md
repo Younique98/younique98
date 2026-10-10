@@ -4,6 +4,10 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 
 ## [Unreleased]
 
+### Changed (final sweep)
+- The "How I Lead" link opens the engineering philosophy page itself (ericathompson.io/about/philosophy), where the principles it promises are written out, instead of the general About page
+- `CLAUDE.md` lists the Semgrep scan among the checks to run before pushing, since CI already runs it on every pull request (`.github/workflows/codeql.yml`)
+
 ### Fixed
 - The placement figure matches its source: over 80% of the engineers Erica mentors one-on-one and in groups have landed tech roles, as ericathompson.io/about states, rather than over 80% of all 500+ engineers trained
 - The animated headline has alt text that reads its five lines, instead of "Typing SVG", and no longer links to the tool that generates it, a link with no meaning for a visitor (WCAG 1.1.1, 2.4.4)
