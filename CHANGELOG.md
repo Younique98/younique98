@@ -5,6 +5,7 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 ## [Unreleased]
 
 ### Fixed
+- The placement figure matches its source: over 80% of the engineers Erica mentors one-on-one and in groups have landed tech roles, as ericathompson.io/about states, rather than over 80% of all 500+ engineers trained
 - The animated headline has alt text that reads its five lines, instead of "Typing SVG", and no longer links to the tool that generates it, a link with no meaning for a visitor (WCAG 1.1.1, 2.4.4)
 - Visitors whose system asks for reduced motion see a still headline instead of the typing animation (`assets/headline-static.svg`), as the design standards require a non-motion alternative for every animation
 - The contact badges are announced by the words they show: "Portfolio: ericathompson.io", "LinkedIn profile" and "Book an Audit by email", instead of "Portfolio" and "Email" (WCAG 2.5.3, label in name)

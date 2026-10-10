@@ -95,7 +95,7 @@ Three ways teams bring me in. All three are designed so your team keeps the capa
 
 ## 📺 How I Think: "The Imposter Engineer"
 
-I have trained more than 500 engineers into this industry. Career changers, veterans, military spouses, and people the traditional pipeline ignored. Over 80% of them got placed.
+I have trained more than 500 engineers into this industry. Career changers, veterans, military spouses, and people the traditional pipeline ignored. Over 80% of the engineers I mentor, one-on-one and in groups, have landed tech roles.
 
 I put my methods on the record: how to read an unfamiliar codebase, how to debug like a detective, and how to translate what you built into what it earned. If you are a founder deciding whether to trust me with your system, start here. Watch how I think through a problem before you pay me to think through yours.
 
