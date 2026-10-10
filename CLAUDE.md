@@ -9,9 +9,10 @@ Run what CI runs, in this order, and push only when all pass:
 ```bash
 node scripts/check-standards.mjs
 trufflehog git file://. --since-commit origin/main --results=verified,unknown --fail
+semgrep scan --config p/default --error --metrics=off
 ```
 
-The secret scan needs `trufflehog` installed locally (`brew install trufflehog`). It is the same scan CI runs, so a finding never reaches a pull request.
+The secret scan and Semgrep need `trufflehog` and `semgrep` installed locally (`brew install trufflehog semgrep`, or `pip install semgrep`). They are the same scans CI runs (`.github/workflows/secrets.yml` and `codeql.yml`), so a finding never reaches a pull request.
 
 ## Never
 

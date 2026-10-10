@@ -57,7 +57,7 @@ Companies compound through people. Engineers who are trusted, taught, and held t
 These rest on research, not opinion: psychological safety was the most important factor in Google's most effective teams (Project Aristotle), and DORA's research links trusting, learning cultures to both delivery and business performance.
 
 <div align="center">
-<a href="https://ericathompson.io/about"><b>📐 Read how I lead, and the principles every project I lead starts from, at ericathompson.io</b></a>
+<a href="https://ericathompson.io/about/philosophy"><b>📐 Read how I lead, and the principles every project I lead starts from, at ericathompson.io</b></a>
 </div>
 
 ## 🤝 Engagements
