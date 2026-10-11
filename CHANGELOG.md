@@ -4,6 +4,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 
 ## [Unreleased]
 
+### Added (copy standard)
+- `CLAUDE.md` forbids writing or editing the meaning of a testimonial and adding urgency, scarcity, a counter or a price claim that is not true, as the engineering standards' copy and conversion rules now require. An audit of the README against those rules found no generic marketing words, no exclamation marks, no fake urgency and no testimonials, so the profile itself is unchanged
+
 ### Changed (final sweep)
 - The "How I Lead" link opens the engineering philosophy page itself (ericathompson.io/about/philosophy), where the principles it promises are written out, instead of the general About page
 - `CLAUDE.md` lists the Semgrep scan among the checks to run before pushing, since CI already runs it on every pull request (`.github/workflows/codeql.yml`)
