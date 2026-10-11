@@ -17,6 +17,7 @@ The secret scan and Semgrep need `trufflehog` and `semgrep` installed locally (`
 ## Never
 
 - Claim a result, technology, number or client the shipped work does not support. Every number has a source: shipped work, a test run, or a report
+- Write, generate or edit the meaning of a testimonial or endorsement, or add urgency, scarcity, a counter or a price claim that is not true, such as "only two audit slots left" (`design/COPY_AND_CONVERSION_STANDARDS.md` in the engineering standards, Sections 6 and 7)
 - Add a personal email address or a link to a private repository. A bare profile link is fine; `standards.config.json` lists the repositories that are public
 - Commit secrets, or ask for a key to be pasted into chat
 - Pin a GitHub Action to a tag instead of a commit SHA, or give a workflow more than `contents: read` without a stated reason
