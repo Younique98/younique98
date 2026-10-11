@@ -4,6 +4,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 
 ## [Unreleased]
 
+### Changed (standards check)
+- `scripts/check-standards.mjs` is the current copy from the engineering standards. It now fails when a Playwright config sets `retries` to anything but 0, when a spec calls `.configure({ retries })`, or when a script or workflow runs `playwright test --retries`, because a test that passes only on a second try is flaky, and a flaky test is a bug to fix, not to retry past. This repository has no Playwright config today; the rule applies to any it gains
+
 ### Added (copy standard)
 - `CLAUDE.md` forbids writing or editing the meaning of a testimonial and adding urgency, scarcity, a counter or a price claim that is not true, as the engineering standards' copy and conversion rules now require. An audit of the README against those rules found no generic marketing words, no exclamation marks, no fake urgency and no testimonials, so the profile itself is unchanged
 

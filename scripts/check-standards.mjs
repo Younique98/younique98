@@ -214,6 +214,101 @@ if (migrationDir) {
   }
 }
 
+// 6. Links resolve on a fresh database and in production (warning for now).
+//
+// A home page button linked to a demo page that existed only when a seeded
+// demo account was in the database. The end-to-end tests used a seeded
+// database, so they passed, and nothing checked the live site, where it
+// answered 404 (STANDARDS.md, section 8). A Next.js product carries the link
+// check from templates/testing/ (tests/links/links.spec.ts) and the workflow
+// from templates/workflows/link-check.yml, which runs it on a fresh database
+// and against production. This warns until LINK_CHECK_REQUIRED_FROM, then
+// fails, so products that met the standards before it are not failed today.
+const LINK_CHECK_REQUIRED_FROM = "2027-01-04";
+const warnings = [];
+if (pkg?.dependencies?.next && config.template !== true) {
+  const linkProblems = [];
+  const spec = ["tests", "e2e", join("e2e", "tests")]
+    .map((dir) => join(ROOT, dir, "links", "links.spec.ts"))
+    .find((file) => existsSync(file));
+  if (!spec) {
+    linkProblems.push("no tests/links/links.spec.ts: copy tests/links/ and tests/support/links.ts from engineering-standards, templates/testing/");
+  }
+  const WORKFLOWS = join(ROOT, ".github", "workflows");
+  const workflows = existsSync(WORKFLOWS)
+    ? readdirSync(WORKFLOWS)
+        .filter((file) => /\.ya?ml$/.test(file))
+        .map((file) => readFileSync(join(WORKFLOWS, file), "utf8"))
+    : [];
+  for (const [marker, what] of [
+    ["LINK_CHECK_TARGET: fresh", "on a fresh database"],
+    ["LINK_CHECK_TARGET: production", "against production on a schedule and after each deployment"],
+  ]) {
+    if (!workflows.some((text) => text.includes(marker))) {
+      linkProblems.push(`no workflow runs the link check ${what} (${marker}): copy engineering-standards, templates/workflows/link-check.yml`);
+    }
+  }
+  const required = new Date() >= new Date(`${LINK_CHECK_REQUIRED_FROM}T00:00:00Z`);
+  for (const problem of linkProblems) {
+    (required ? failures : warnings).push(`Link check: ${problem}.${required ? "" : ` Required from ${LINK_CHECK_REQUIRED_FROM}.`}`);
+  }
+}
+
+// 7. Playwright never retries a failing test.
+//
+// A test that passes only on a second try is flaky, and a flaky test is a bug
+// to fix, not to retry past (STANDARDS.md, section 8). The template config
+// sets `retries: 0`, yet five products still had `retries: process.env.CI ?
+// 1 : 0`, which turns every flaky failure in CI into a green run nobody looks
+// at. This fails any Playwright config (a file that imports @playwright/test
+// and calls defineConfig) whose `retries` is anything but the literal 0, a
+// `.configure({ retries })` call in a spec, and `playwright test --retries`
+// in package.json or a workflow. A resilience helper's own `retries` option
+// in a spec is not a test retry and is left alone.
+const PLAYWRIGHT_IMPORT = /^\s*import\b[^;]*?\bfrom\s*["'](?:@playwright\/test|playwright\/test)["']/m;
+// Comments are dropped first, so a comment that mentions retries is not read
+// as a setting. A `//` after a colon (a URL such as http://localhost) stays.
+// Block comments keep their line breaks, so reported line numbers are right.
+const stripComments = (code) =>
+  code
+    .replace(/\/\*[\s\S]*?\*\//g, (comment) => comment.replace(/[^\n]/g, " "))
+    .replace(/(^|[^:\\])\/\/.*$/gm, "$1");
+const lineOf = (text, index) => text.slice(0, index).split("\n").length;
+const NO_RETRIES = "Set retries: 0. A test that passes only on a second try is flaky, and a flaky test is a bug to fix, not to retry past (STANDARDS.md, section 8)";
+for (const file of walk(ROOT)) {
+  if (rel(file) === join("scripts", "check-standards.mjs")) continue;
+  const ext = extname(file);
+  let text;
+  try { text = readFileSync(file, "utf8"); } catch { continue; }
+  if ([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"].includes(ext)) {
+    if (!PLAYWRIGHT_IMPORT.test(text)) continue;
+    const code = stripComments(text);
+    const settings = [];
+    if (/\bdefineConfig\s*\(/.test(code)) {
+      for (const m of code.matchAll(/\bretries\s*:\s*([^,}\n]+)/g)) settings.push(m);
+    }
+    for (const m of code.matchAll(/\.configure\s*\(\s*\{[^}]*?\bretries\s*:\s*([^,}\n]+)/g)) {
+      if (!settings.some((s) => s.index <= m.index + m[0].length && s.index >= m.index)) settings.push(m);
+    }
+    for (const m of settings) {
+      const value = m[1].trim();
+      if (value !== "0") {
+        failures.push(`${rel(file)}:${lineOf(code, m.index)}: Playwright retries is "${value}". ${NO_RETRIES}.`);
+      }
+    }
+  } else if (ext === ".json" || ext === ".yml" || ext === ".yaml") {
+    for (const m of text.matchAll(/playwright test\b[^\n"']*?--retries(?:=|\s+)(\S+?)(?=["'\s]|$)/gm)) {
+      if (m[1] !== "0") {
+        failures.push(`${rel(file)}:${lineOf(text, m.index)}: "playwright test --retries=${m[1]}". ${NO_RETRIES}.`);
+      }
+    }
+  }
+}
+
+for (const w of warnings) {
+  console.warn(process.env.GITHUB_ACTIONS ? `::warning::${w}` : `Warning: ${w}`);
+}
+
 if (failures.length) {
   console.error(`\nProject standards check failed (${failures.length}):\n`);
   for (const f of failures) console.error(`  ${f}`);
