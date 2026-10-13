@@ -349,7 +349,9 @@ const stripYamlComments = (text) =>
       for (let i = 0; i < line.length; i++) {
         const c = line[i];
         if (quote) {
-          if (c === quote) quote = null;
+          // YAML escapes a quote inside double quotes with a backslash.
+          if (quote === '"' && c === "\\") i++;
+          else if (c === quote) quote = null;
         } else if (c === '"' || c === "'") {
           quote = c;
         } else if (c === "#" && (i === 0 || line[i - 1] === " " || line[i - 1] === "\t")) {
@@ -357,6 +359,21 @@ const stripYamlComments = (text) =>
         }
       }
       return line;
+    })
+    .join("\n");
+// Unwraps a YAML quoted scalar written on one line (`run: "npx ..."` or
+// `run: 'npx ...'`), so the scalar's own quotes are not read as a shell
+// argument's. Its escapes (`\"` in double quotes, `''` in single quotes)
+// become the quote they stand for. Length-preserving.
+const unquoteYamlScalars = (text) =>
+  text
+    .split("\n")
+    .map((line) => {
+      const m = /^([ \t]*(?:-[ \t]+)?[\w.-]+:[ \t]*)(["'])(.*)\2([ \t\r]*)$/.exec(line);
+      if (!m) return line;
+      const [, key, q, body, tail] = m;
+      const inner = q === '"' ? body.replace(/\\"/g, ' "') : body.replace(/''/g, " '");
+      return key + " " + inner + " " + tail;
     })
     .join("\n");
 // Every `playwright test` command's `--retries` value, read with quote
@@ -378,7 +395,7 @@ const cliRetries = (text) => {
         quote = c;
       } else if (c === "\n" || c === ";" || c === "&" || c === "|") {
         break;
-      } else if (c === " " || c === "\t") {
+      } else if (c === " " || c === "\t" || c === "\r") {
         if (token) tokens.push(token);
         token = "";
       } else {
@@ -399,6 +416,8 @@ const cliRetries = (text) => {
 const joinContinuedCommands = (text) => {
   let out = text.replace(/\\\r?\n/g, (match) => " ".repeat(match.length));
   const lines = out.split("\n");
+  // joinNext[k]: line k is inside a folded block and joins the next with spaces.
+  const joinNext = lines.map(() => false);
   for (let i = 0; i < lines.length; i++) {
     const folded = /^([ \t]*)(?:-[ \t]+)?[\w.-]+:[ \t]*>[-+0-9]*[ \t]*$/.exec(lines[i]);
     if (!folded) continue;
@@ -406,10 +425,10 @@ const joinContinuedCommands = (text) => {
     let j = i + 1;
     while (j < lines.length && (lines[j].trim() === "" || /^[ \t]*/.exec(lines[j])[0].length > indent)) j++;
     // Lines i+1 .. j-1 are the block: join them with spaces.
-    for (let k = i + 1; k < j - 1; k++) lines[k] = lines[k] + "\u0000";
+    for (let k = i + 1; k < j - 1; k++) joinNext[k] = true;
     i = j - 1;
   }
-  out = lines.join("\n").replace(/\u0000\n/g, "  ");
+  out = lines.map((line, k) => (k === lines.length - 1 ? line : line + (joinNext[k] ? "  " : "\n"))).join("");
   return out;
 };
 const NO_RETRIES = "Set retries: 0. A test that passes only on a second try is flaky, and a flaky test is a bug to fix, not to retry past (STANDARDS.md, section 8)";
@@ -470,7 +489,7 @@ for (const file of walk(ROOT)) {
         if (typeof command === "string") commands.push({ text: command, line: lineOf(text, Math.max(0, text.indexOf(JSON.stringify(name)))) });
       }
     } else {
-      commands.push({ text: joinContinuedCommands(stripYamlComments(text)), line: null });
+      commands.push({ text: joinContinuedCommands(unquoteYamlScalars(stripYamlComments(text))), line: null });
     }
     for (const { text: command, line } of commands) {
       for (const { index, value } of cliRetries(command)) {
