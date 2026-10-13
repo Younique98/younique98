@@ -399,6 +399,8 @@ const cliRetries = (text) => {
 const joinContinuedCommands = (text) => {
   let out = text.replace(/\\\r?\n/g, (match) => " ".repeat(match.length));
   const lines = out.split("\n");
+  // joinNext[k]: line k is inside a folded block and joins the next with spaces.
+  const joinNext = lines.map(() => false);
   for (let i = 0; i < lines.length; i++) {
     const folded = /^([ \t]*)(?:-[ \t]+)?[\w.-]+:[ \t]*>[-+0-9]*[ \t]*$/.exec(lines[i]);
     if (!folded) continue;
@@ -406,10 +408,10 @@ const joinContinuedCommands = (text) => {
     let j = i + 1;
     while (j < lines.length && (lines[j].trim() === "" || /^[ \t]*/.exec(lines[j])[0].length > indent)) j++;
     // Lines i+1 .. j-1 are the block: join them with spaces.
-    for (let k = i + 1; k < j - 1; k++) lines[k] = lines[k] + "\u0000";
+    for (let k = i + 1; k < j - 1; k++) joinNext[k] = true;
     i = j - 1;
   }
-  out = lines.join("\n").replace(/\u0000\n/g, "  ");
+  out = lines.map((line, k) => (k === lines.length - 1 ? line : line + (joinNext[k] ? "  " : "\n"))).join("");
   return out;
 };
 const NO_RETRIES = "Set retries: 0. A test that passes only on a second try is flaky, and a flaky test is a bug to fix, not to retry past (STANDARDS.md, section 8)";

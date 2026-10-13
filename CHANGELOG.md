@@ -4,6 +4,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 
 ## [Unreleased]
 
+### Fixed (standards check)
+- `scripts/check-standards.mjs` is the current engineering standards copy, which joins folded workflow lines without a NUL marker character, so ESLint's `no-control-regex` rule accepts it. Its results are unchanged
+
 ### Changed (standards check)
 - `scripts/check-standards.mjs` is the current engineering standards copy. Its Playwright retries rule now also catches CommonJS configs, the shorthand `{ retries }`, `test.describe.configure({ retries })` behind a local fixtures import, and `--retries` in split, folded or quoted workflow commands, and it no longer flags commented-out commands, fixtures, or options outside `defineConfig`. The link check rule counts `LINK_CHECK_TARGET` only as a key of a workflow `env:` mapping, not in a comment or a `run:` script. This repository passes the updated check unchanged
 
