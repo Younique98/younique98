@@ -5,6 +5,9 @@ Every pull request adds its entry under `Unreleased`. At release time, `Unreleas
 ## [Unreleased]
 
 ### Changed (standards check)
+- `scripts/check-standards.mjs` is the current engineering standards copy. Its Playwright retries rule now also catches CommonJS configs, the shorthand `{ retries }`, `test.describe.configure({ retries })` behind a local fixtures import, and `--retries` in split, folded or quoted workflow commands, and it no longer flags commented-out commands, fixtures, or options outside `defineConfig`. The link check rule counts `LINK_CHECK_TARGET` only as a key of a workflow `env:` mapping, not in a comment or a `run:` script. This repository passes the updated check unchanged
+
+### Changed (standards check)
 - `scripts/check-standards.mjs` is the current copy from the engineering standards. It now fails when a Playwright config sets `retries` to anything but 0, when a spec calls `.configure({ retries })`, or when a script or workflow runs `playwright test --retries`, because a test that passes only on a second try is flaky, and a flaky test is a bug to fix, not to retry past. This repository has no Playwright config today; the rule applies to any it gains
 
 ### Added (copy standard)
